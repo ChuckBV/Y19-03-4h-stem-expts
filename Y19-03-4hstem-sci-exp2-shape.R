@@ -20,10 +20,10 @@ library(dplyr)
 library(ggplot2)
 
 ### Import success vs voume data for Arrowhead
-VolEffcts <- as_tibble(read.csv("./Y19-03-4h-stem-expts/stem-water-bottle-flips-2019-03-23.csv"))
+VolEffcts <- as_tibble(read.csv("stem-water-bottle-flips-2019-03-23.csv"))
 
 ### Import the data comparing success rate of flips between the two bottles
-Comparison <- as_tibble(read.csv("./Y19-03-4h-stem-expts/stem-water-bottle-flips-2019-03-25.csv"))
+Comparison <- as_tibble(read.csv("stem-water-bottle-flips-2019-03-25.csv"))
 
 
 #-- 2. Vertical bar chart success vs volume for Arrowhead 8 oz bottle -------
@@ -45,8 +45,9 @@ pProp <- ggplot(VolEffcts, aes(x = Volume, y = Percent)) +
 
 pProp
 
-ggsave(filename = "./Y19-03-4h-stem-expts/shape_fig1_vol_arrowhead.jpg", 
-       plot = pProp, device = "jpg",  dpi = 300, width = 8, height = 5.83, units = "in")
+ggsave(filename = "shape_fig1.jpg", 
+       plot = pProp, device = "jpg",  dpi = 300, width = 8, height = 5.83, 
+       units = "in")
 
 #-- 3. Scatter plot of success by trial order and bottle size ---------------
 
@@ -98,7 +99,6 @@ pScatter <- ggplot(Comparison, aes(x = Time, y = Success)) +
 
 pScatter
 
-ggsave(filename = "./Y19-03-4h-stem-expts/shape_fig2_scatter.jpg", 
-       plot = pScatter, device = "jpg", dpi = 300, width = 8, height = 5.83, 
-       units = "in")
+ggsave(filename = "shape_fig2.jpg", plot = pScatter, device = "jpg", 
+       dpi = 300, width = 8, height = 5.83, units = "in")
 

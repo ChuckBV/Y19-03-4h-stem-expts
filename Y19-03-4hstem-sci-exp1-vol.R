@@ -19,7 +19,7 @@ library(ggplot2)
 library(DescTools)
 
 ### Import data
-flips <- as_tibble(read.csv("./Y19-03-4h-stem-expts/stem-water-bottle-flips-2019-03-11.csv"))
+flips <- as_tibble(read.csv("stem-water-bottle-flips-2019-03-11.csv"))
 
 ### Reduce data to essentials
 flips$Prop <- flips$Successes/flips$Trials
@@ -48,7 +48,7 @@ pPlot_succes <- ggplot(flips, aes(x = Ml, y = Prop, colour = Flipper)) +
 
 pPlot_succes
 
-ggsave(filename = "./Y19-03-4h-stem-expts/Vol_fig1_individuals.jpg", plot = pPlot_succes, device = "jpg",  
+ggsave(filename = "Vol_fig1.jpg", plot = pPlot_succes, device = "jpg",  
        dpi = 300, width = 8, height = 5.83, units = "in")
 
 
@@ -122,7 +122,7 @@ pBoxplot <- ggplot(counts2, aes(x = Flipper, y = Ml)) +
 
 pBoxplot
 
-ggsave(filename = "./Y19-03-4h-stem-expts/Vol_fig2_median_success.jpg", plot = pBoxplot, device = "jpg",  
+ggsave(filename = "Vol_fig2.jpg", plot = pBoxplot, device = "jpg",  
        dpi = 300, width = 8, height = 5.83, units = "in")
 
 Desc(Ml ~ Flipper, data = counts2, plotit = FALSE)
@@ -166,7 +166,7 @@ pPlot_succes2 <- ggplot(flips, aes(x = Ml, y = Prop, colour = Flipper)) +
 
 pPlot_succes2
 
-ggsave(filename = "./Y19-03-4h-stem-expts/Vol_fig3_scatter_all.jpg", 
+ggsave(filename = "Vol_fig3.jpg", 
        plot = pPlot_succes2, device = "jpg", dpi = 300, width = 8, 
        height = 5.83, units = "in")
 
