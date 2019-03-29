@@ -7,9 +7,6 @@ empirical data were collected to test received wisdom about the importance
 of some factors in success of the water bottle flip. Factors examined were
 the volume of water in the bottle and the shape of the bottle.
 
-The R script "Y19-4h-stem-roster.R" is essentially an attendance chart, and
-can be ignored from a data perspective.
-
 ## Volume of water
 
 Uses "Y19-4hstem-sci-exp1.R" and "stem-water-bottle-flips-2019-03-11.csv"
